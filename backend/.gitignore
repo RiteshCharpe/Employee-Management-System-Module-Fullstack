@@ -1,20 +1,26 @@
-HELP.md
+# Maven build output
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Build directories
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IDE settings
 ### STS ###
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -25,13 +31,20 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
 
-# Ignore application properties
-backend/src/main/resources
+# Logs
+*.log
 
+# Environment & config files (important!)
+*.env
+application.properties
+application.yml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
