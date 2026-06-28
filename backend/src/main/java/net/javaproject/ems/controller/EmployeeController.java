@@ -9,9 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+        import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "*")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/employees")
@@ -53,5 +54,12 @@ public class EmployeeController {
             @PathVariable Long id,
             @RequestBody Map<String, Object> updates) {
         return ResponseEntity.ok(employeeService.updateEmployeePartially(id, updates));
+    }
+
+    //Build Delete Employee Rest API
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long employeeId){
+        employeeService.deleteEmployee(employeeId);
+        return ResponseEntity.ok("Employee deleted successfully");
     }
 }
